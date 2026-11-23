@@ -20,10 +20,14 @@ in a Docker volume for later runs. Once the image and model are available, the
 evaluation uses the local Ollama service. The first build also downloads the
 Node dependencies inside the image.
 
-Read `results/report.md` for the summary and case results, and
-`results/results.json` for raw responses and model metadata. Each run overwrites
-both files; copy them elsewhere first if you want to preserve a previous run.
-The existing report was generated with the earlier prompt and validation.
+Each run writes a timestamped directory under `results/`, containing `report.md`
+and `results.json` with complete inputs, responses, prompt hash and model metadata.
+The files directly under `results/` are the earlier run and are preserved.
+Set `HARDWARE` on the evaluation container to record the host and execution
+device, for example `docker compose run --rm -e "HARDWARE=CPU and RAM details" eval`.
+P95 uses the nearest-rank method: sort recorded response times and select the
+one at rank ceil(0.95 × N), counting from 1. Failed requests without a response
+time are excluded.
 
 To try another model, pull it first, then override the evaluator's model:
 

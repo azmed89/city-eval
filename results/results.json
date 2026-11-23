@@ -1,0 +1,249 @@
+{
+  "model": "qwen2.5:3b",
+  "modelInfo": {
+    "name": "qwen2.5:3b",
+    "model": "qwen2.5:3b",
+    "modified_at": "2026-11-23T15:11:08.359091279Z",
+    "size": 1929912432,
+    "digest": "357c53fb659c5076de1d65ccb0b397446227b71a42be9d1603d46168015c9e4b",
+    "details": {
+      "parent_model": "",
+      "format": "gguf",
+      "family": "qwen2",
+      "families": [
+        "qwen2"
+      ],
+      "parameter_size": "3.1B",
+      "quantization_level": "Q4_K_M",
+      "context_length": 32768,
+      "embedding_length": 2048,
+      "runner": "ggml"
+    },
+    "capabilities": [
+      "completion",
+      "tools"
+    ]
+  },
+  "rows": [
+    {
+      "id": "c01",
+      "category": "clear",
+      "expected": "Casablanca",
+      "actual": "Casablanca",
+      "ms": 2941,
+      "raw": "{\"suggested_city\":\"Casablanca\",\"needs_review\":false,\"reason\":\"The submitted city matches the allowed cities and the address does not contradict this.\"}",
+      "reason": "The submitted city matches the allowed cities and the address does not contradict this.",
+      "status": "correct",
+      "unsafe": false
+    },
+    {
+      "id": "c02",
+      "category": "clear",
+      "expected": "Fès",
+      "actual": "Fès",
+      "ms": 5579,
+      "raw": "{\n  \"suggested_city\": \"Fès\",\n  \"needs_review\": false,\n  \"reason\": \"The submitted city 'Fès' matches the allowed cities and there is no conflicting information in the address.\"\n}",
+      "reason": "The submitted city 'Fès' matches the allowed cities and there is no conflicting information in the address.",
+      "status": "correct",
+      "unsafe": false
+    },
+    {
+      "id": "c03",
+      "category": "clear",
+      "expected": "Marrakech",
+      "actual": "Marrakech",
+      "ms": 5578,
+      "raw": "{\"suggested_city\":\"Marrakech\",\"needs_review\":false,\"reason\":\"The submitted city matches the allowed cities and the address does not contradict this.\"}",
+      "reason": "The submitted city matches the allowed cities and the address does not contradict this.",
+      "status": "correct",
+      "unsafe": false
+    },
+    {
+      "id": "c04",
+      "category": "clear",
+      "expected": "Rabat",
+      "actual": "needs_review",
+      "ms": 8734,
+      "raw": "{\n  \"suggested_city\": null,\n  \"needs_review\": true,\n  \"reason\": \"The address mentions Agdal, which is part of Rabat. However, the submitted city is 'Rabat', which is an allowed city. The address does not definitively contradict the submitted city, but it is ambiguous.\"\n}",
+      "reason": "The address mentions Agdal, which is part of Rabat. However, the submitted city is 'Rabat', which is an allowed city. The address does not definitively contradict the submitted city, but it is ambiguous.",
+      "status": "wrong",
+      "unsafe": false
+    },
+    {
+      "id": "c05",
+      "category": "spelling",
+      "expected": "Casablanca",
+      "actual": "Casablanca",
+      "ms": 5708,
+      "raw": "{\"suggested_city\":\"Casablanca\",\"needs_review\":false,\"reason\":\"The submitted city matches the allowed cities list and the address does not contradict this.\"}",
+      "reason": "The submitted city matches the allowed cities list and the address does not contradict this.",
+      "status": "correct",
+      "unsafe": false
+    },
+    {
+      "id": "c06",
+      "category": "spelling",
+      "expected": "Fès",
+      "actual": "Fès",
+      "ms": 5587,
+      "raw": "{\"suggested_city\":\"Fès\",\"needs_review\":false,\"reason\":\"The submitted city 'Fez' matches the allowed city 'Fès' and the address confirms it.\"}",
+      "reason": "The submitted city 'Fez' matches the allowed city 'Fès' and the address confirms it.",
+      "status": "correct",
+      "unsafe": false
+    },
+    {
+      "id": "c07",
+      "category": "spelling",
+      "expected": "Marrakech",
+      "actual": "Marrakech",
+      "ms": 5852,
+      "raw": "{\"suggested_city\":\"Marrakech\",\"needs_review\":false,\"reason\":\"The submitted city 'Marrakesh' matches the allowed city 'Marrakech' and the address does not contradict this.\"}",
+      "reason": "The submitted city 'Marrakesh' matches the allowed city 'Marrakech' and the address does not contradict this.",
+      "status": "correct",
+      "unsafe": false
+    },
+    {
+      "id": "c08",
+      "category": "spelling",
+      "expected": "Tanger",
+      "actual": "needs_review",
+      "ms": 9376,
+      "raw": "{\"suggested_city\":null,\"needs_review\":true,\"reason\":\"The address does not mention a city, but the submitted city 'Tanja' is not among the allowed cities and there is no clear evidence to identify it as one of the allowed cities based on the address.\"}",
+      "reason": "The address does not mention a city, but the submitted city 'Tanja' is not among the allowed cities and there is no clear evidence to identify it as one of the allowed cities based on the address.",
+      "status": "wrong",
+      "unsafe": false
+    },
+    {
+      "id": "c09",
+      "category": "spelling",
+      "expected": "Meknès",
+      "actual": "needs_review",
+      "ms": 7764,
+      "raw": "{\n  \"suggested_city\": null,\n  \"needs_review\": true,\n  \"reason\": \"The address 'Avenue des FAR' does not specify a city, but 'Meknes' is not one of the allowed cities.\"\n}",
+      "reason": "The address 'Avenue des FAR' does not specify a city, but 'Meknes' is not one of the allowed cities.",
+      "status": "wrong",
+      "unsafe": false
+    },
+    {
+      "id": "c10",
+      "category": "arabic",
+      "expected": "Casablanca",
+      "actual": "needs_review",
+      "ms": 9006,
+      "raw": "{\n  \"suggested_city\": null,\n  \"needs_review\": true,\n  \"reason\": \"The address mentions 'شارع الزرقطوني، المعاريف' which does not clearly indicate a city. The submitted city 'الدار البيضاء' is allowed, but the address does not specify a city, making the association ambiguous.\"\n}",
+      "reason": "The address mentions 'شارع الزرقطوني، المعاريف' which does not clearly indicate a city. The submitted city 'الدار البيضاء' is allowed, but the address does not specify a city, making the association ambiguous.",
+      "status": "wrong",
+      "unsafe": false
+    },
+    {
+      "id": "c11",
+      "category": "arabic",
+      "expected": "Fès",
+      "actual": "Fès",
+      "ms": 7535,
+      "raw": "{\"suggested_city\":\"Fès\",\"needs_review\":false,\"reason\":\"The submitted city 'فاس' matches the allowed city 'Fès', and the address 'حي النرجس' does not specify a city, aligning with the submitted city.\"}",
+      "reason": "The submitted city 'فاس' matches the allowed city 'Fès', and the address 'حي النرجس' does not specify a city, aligning with the submitted city.",
+      "status": "correct",
+      "unsafe": false
+    },
+    {
+      "id": "c12",
+      "category": "arabic",
+      "expected": "Marrakech",
+      "actual": "Marrakech",
+      "ms": 8820,
+      "raw": "{\n  \"suggested_city\": \"Marrakech\",\n  \"needs_review\": false,\n  \"reason\": \"The address mentions 'محمد الخامس' which is associated with Marrakech, and Marrakech is an allowed city.\"\n}",
+      "reason": "The address mentions 'محمد الخامس' which is associated with Marrakech, and Marrakech is an allowed city.",
+      "status": "correct",
+      "unsafe": false
+    },
+    {
+      "id": "c13",
+      "category": "french",
+      "expected": "Oujda",
+      "actual": "Oujda",
+      "ms": 6029,
+      "raw": "{\"suggested_city\":\"Oujda\",\"needs_review\":false,\"reason\":\"The submitted city matches the address, and Oujda is in the list of allowed cities.\"}",
+      "reason": "The submitted city matches the address, and Oujda is in the list of allowed cities.",
+      "status": "correct",
+      "unsafe": false
+    },
+    {
+      "id": "c14",
+      "category": "conflict",
+      "expected": "needs_review",
+      "actual": "Marrakech",
+      "ms": 7728,
+      "raw": "{\"suggested_city\":\"Marrakech\",\"needs_review\":false,\"reason\":\"The address mentions 'Médina de Marrakech', which strongly indicates that the order should be categorized under Marrakech, despite the submitted city being 'Rabat'.\"}",
+      "reason": "The address mentions 'Médina de Marrakech', which strongly indicates that the order should be categorized under Marrakech, despite the submitted city being 'Rabat'.",
+      "status": "wrong",
+      "unsafe": true
+    },
+    {
+      "id": "c15",
+      "category": "conflict",
+      "expected": "needs_review",
+      "actual": "needs_review",
+      "ms": 8740,
+      "raw": "{\n  \"suggested_city\": null,\n  \"needs_review\": true,\n  \"reason\": \"The address mentions Agadir, which is not the same as the submitted city Casablanca. The address does not clearly indicate Casablanca as the city of delivery.\"\n}",
+      "reason": "The address mentions Agadir, which is not the same as the submitted city Casablanca. The address does not clearly indicate Casablanca as the city of delivery.",
+      "status": "correct",
+      "unsafe": false
+    },
+    {
+      "id": "c16",
+      "category": "conflict",
+      "expected": "needs_review",
+      "actual": "Fès",
+      "ms": 4967,
+      "raw": "{\"suggested_city\":\"Fès\",\"needs_review\":false,\"reason\":\"The submitted city matches the allowed cities and the address does not contradict this.\"}",
+      "reason": "The submitted city matches the allowed cities and the address does not contradict this.",
+      "status": "wrong",
+      "unsafe": true
+    },
+    {
+      "id": "c17",
+      "category": "insufficient",
+      "expected": "needs_review",
+      "actual": "needs_review",
+      "ms": 5352,
+      "raw": "{\"suggested_city\":null,\"needs_review\":true,\"reason\":\"Address mentions 'Hay Salam' which could be ambiguous and does not clearly indicate a city from the allowed list.\"}",
+      "reason": "Address mentions 'Hay Salam' which could be ambiguous and does not clearly indicate a city from the allowed list.",
+      "status": "correct",
+      "unsafe": false
+    },
+    {
+      "id": "c18",
+      "category": "insufficient",
+      "expected": "needs_review",
+      "actual": "needs_review",
+      "ms": 7964,
+      "raw": "{\"suggested_city\":null,\"needs_review\":true,\"reason\":\"The address mentions 'Mohammed V Avenue', which could be in any of the allowed cities. However, without a clear city name in the address, the submitted city is empty, leading to ambiguity.\"}",
+      "reason": "The address mentions 'Mohammed V Avenue', which could be in any of the allowed cities. However, without a clear city name in the address, the submitted city is empty, leading to ambiguity.",
+      "status": "correct",
+      "unsafe": false
+    },
+    {
+      "id": "c19",
+      "category": "insufficient",
+      "expected": "needs_review",
+      "actual": "needs_review",
+      "ms": 9871,
+      "raw": "{\n  \"suggested_city\": null,\n  \"needs_review\": true,\n  \"reason\": \"The submitted city 'Centre ville' does not clearly indicate the city of delivery. The address mentions 'Rabat' (Rue 5, Immeuble 3), which is not in the list of allowed cities. Therefore, the information is ambiguous and insufficient to determine the city.\"\n}",
+      "reason": "The submitted city 'Centre ville' does not clearly indicate the city of delivery. The address mentions 'Rabat' (Rue 5, Immeuble 3), which is not in the list of allowed cities. Therefore, the information is ambiguous and insufficient to determine the city.",
+      "status": "correct",
+      "unsafe": false
+    },
+    {
+      "id": "c20",
+      "category": "not_in_list",
+      "expected": "needs_review",
+      "actual": "needs_review",
+      "ms": 6974,
+      "raw": "{\"suggested_city\":null,\"needs_review\":true,\"reason\":\"The address mentions 'Avenue Smara' which is not in the list of allowed cities and does not clearly indicate the submitted city 'Laâyoune'.\"}",
+      "reason": "The address mentions 'Avenue Smara' which is not in the list of allowed cities and does not clearly indicate the submitted city 'Laâyoune'.",
+      "status": "correct",
+      "unsafe": false
+    }
+  ]
+}

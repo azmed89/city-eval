@@ -1,0 +1,25 @@
+{
+    "allowed_cities": ["Casablanca","Rabat","Fès","Marrakech","Tanger","Agadir","Meknès","Oujda","Tétouan","Kénitra"],
+    "cases": [
+      {"id":"c01","category":"clear","submitted_city":"Casablanca","address":"12 Rue Ibn Batouta, Maarif","expected":"Casablanca"},
+      {"id":"c02","category":"clear","submitted_city":"Fès","address":"Avenue Hassan II, Ville Nouvelle","expected":"Fès"},
+      {"id":"c03","category":"clear","submitted_city":"Marrakech","address":"Rue de la Liberté, Guéliz","expected":"Marrakech"},
+      {"id":"c04","category":"clear","submitted_city":"Rabat","address":"Avenue Mohammed V, Agdal","expected":"Rabat"},
+      {"id":"c05","category":"spelling","submitted_city":"Casablnca","address":"Bd Zerktouni, Maarif","expected":"Casablanca"},
+      {"id":"c06","category":"spelling","submitted_city":"Fez","address":"Rue Talaa Kebira, Fes El Bali","expected":"Fès"},
+      {"id":"c07","category":"spelling","submitted_city":"Marrakesh","address":"Route de Targa","expected":"Marrakech"},
+      {"id":"c08","category":"spelling","submitted_city":"Tanja","address":"Rue Pasteur","expected":"Tanger"},
+      {"id":"c09","category":"spelling","submitted_city":"Meknes","address":"Avenue des FAR","expected":"Meknès"},
+      {"id":"c10","category":"arabic","submitted_city":"الدار البيضاء","address":"شارع الزرقطوني، المعاريف","expected":"Casablanca"},
+      {"id":"c11","category":"arabic","submitted_city":"فاس","address":"حي النرجس","expected":"Fès"},
+      {"id":"c12","category":"arabic","submitted_city":"مراكش","address":"كيليز، شارع محمد الخامس","expected":"Marrakech"},
+      {"id":"c13","category":"french","submitted_city":"Oujda","address":"Boulevard Mohammed V, quartier Hay Al Qods","expected":"Oujda"},
+      {"id":"c14","category":"conflict","submitted_city":"Rabat","address":"Rue Allal Ben Abdellah, Médina de Marrakech","expected":"needs_review"},
+      {"id":"c15","category":"conflict","submitted_city":"Casablanca","address":"Avenue Hassan II, Founty, Agadir","expected":"needs_review"},
+      {"id":"c16","category":"conflict","submitted_city":"Fès","address":"Corniche de Tanger, près du port","expected":"needs_review"},
+      {"id":"c17","category":"insufficient","submitted_city":"","address":"Rue 12, Hay Salam","expected":"needs_review"},
+      {"id":"c18","category":"insufficient","submitted_city":"","address":"Avenue Mohammed V","expected":"needs_review"},
+      {"id":"c19","category":"insufficient","submitted_city":"Centre ville","address":"Rue 5, Immeuble 3","expected":"needs_review"},
+      {"id":"c20","category":"not_in_list","submitted_city":"Laâyoune","address":"Avenue Smara","expected":"needs_review"}
+    ]
+}
